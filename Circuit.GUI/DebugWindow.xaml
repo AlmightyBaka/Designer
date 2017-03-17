@@ -1,0 +1,38 @@
+﻿<Window x:Class="Circuit.GUI.DebugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Circuit.GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="550" MouseMove="Canvas_MouseMove" SizeChanged="Window_SizeChanged">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height = "50" />
+
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid Row = "1" >
+
+			<Canvas Name="Canvas" Height="Auto" Width="Auto" MouseMove="Canvas_MouseMove" Grid.RowSpan="2" MouseDown="Canvas_MouseDown"/>
+		</Grid>
+		<Grid Row = "0" >
+
+			<StackPanel Orientation="Horizontal" Width="Auto">
+				<StackPanel.Resources>
+					<Style TargetType = "{x:Type Button}" >
+
+						<Setter Property="Margin" Value="10,0,0,0"/>
+					</Style>
+				</StackPanel.Resources>
+				<Label x:Name="PositionLabel" Content="Cursor Pos" Width="75" Height="30" />
+				<Label x:Name="LabelValue" Content="Node Value" Width="100" Height="30"/>
+				<Label x:Name="LabelGuess" Content="ToGuess" Width="100" Height="30"/>
+				<Button x:Name="ButtonBreak" Content="Break" Width="75" Height="30" Click="ButtonBreak_Click" />
+				<Button x:Name="ButtonGenerate" Content="Gen" Width="75"  Height="30" Click="Button_Click"/>
+				<Button x:Name="ButtonGenerateOld" Content="Gen Old" Width="75" Height="30" Click="ButtonGenerateOld_Click"/>
+			</StackPanel>
+		</Grid>
+		<Button x:Name="ButtonCheck" Content="Check" HorizontalAlignment="Left" Margin="10,0,0,-458" Grid.Row="1" VerticalAlignment="Bottom" Width="75" Height="30" Click="ButtonCheck_Click"/>
+	</Grid>
+</Window>
